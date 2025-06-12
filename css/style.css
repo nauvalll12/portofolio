@@ -1,0 +1,627 @@
+/* style.css */
+
+/* ... kode CSS sebelumnya ... */
+.reveal {
+  opacity: 0;
+  transform: translateX(-50px); /* Mulai di luar layar */
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateX(0); /* Muncul ke posisi semula */
+}
+
+/* Styling untuk Skills Grid (5 kotak) */
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Ini yang menengahkan item-item di dalam flex container */
+  gap: 20px;
+  margin-top: 30px;
+  
+  /* Tambahan untuk menengahkan grid itu sendiri (jika belum lebar penuh) */
+  max-width: 1100px; /* Sesuaikan lebar maksimum sesuai preferensi Anda. Ini memastikan grid tidak terlalu lebar. */
+  margin-left: auto; /* Bersama dengan margin-right: auto, ini menengahkan blok */
+  margin-right: auto;
+}
+
+.skill-box {
+  background-color: var(--bg-light);
+  padding: 25px;
+  border-radius: 10px;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  flex: 1 1 180px;
+  max-width: 200px; /* Biarkan max-width untuk kontrol ukuran individual kotak */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.skill-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  background-color: #383838;
+}
+
+.skill-box img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  margin-bottom: 15px;
+  filter: drop-shadow(0 0 8px rgba(0, 255, 255, 0.4));
+}
+
+.skill-box h4 {
+  color: var(--accent-color);
+  font-size: 1.2em;
+  margin-top: 0;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.skill-box p {
+  color: var(--text-secondary);
+  font-size: 0.9em;
+  line-height: 1.4;
+  flex-grow: 1;
+}
+
+/* style.css */
+
+/* ... kode CSS sebelumnya ... */
+
+/* Hero Section */
+.hero {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  /* Hapus background: url('your-hero-background.jpg') no-repeat center center/cover; jika sebelumnya ada */
+  position: relative; /* Penting untuk penempatan video absolute */
+  overflow: hidden; /* Penting untuk memastikan video tidak meluber */
+}
+
+/* Styling untuk video latar belakang */
+#hero-video-bg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -1; /* Mengatur video di belakang konten */
+  transform: translate(-50%, -50%); /* Menengahkan video */
+  object-fit: cover; /* Memastikan video menutupi seluruh area tanpa distorsi */
+  filter: brightness(50%) contrast(120%); /* Memberikan efek gelap dan kontras */
+}
+
+/* Overlay gelap di atas video (opsional, tapi sangat direkomendasikan untuk keterbacaan) */
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6); /* Warna hitam transparan */
+  z-index: 0; /* Di atas video, di bawah konten */
+}
+
+.hero-content {
+  z-index: 1; /* Pastikan konten teks di atas overlay dan video */
+  position: relative; /* Penting agar z-index bekerja dengan baik */
+  padding: 0 20px;
+  max-width: 800px; /* Batasi lebar konten agar tidak terlalu melebar */
+}
+
+.hero-content h1 {
+  font-size: 3.5em;
+  margin-bottom: 0.2em;
+  color: var(--text-primary); /* Pastikan warna teks putih atau terang */
+  text-shadow: 0 0 15px rgba(0, 255, 255, 0.7); /* Efek glow yang lebih menonjol */
+}
+
+.hero-content h2 {
+  font-size: 1.5em;
+  color: var(--text-secondary); /* Warna teks sekunder */
+  margin-top: 0;
+}
+
+/* ... sisa kode CSS Anda ... */
+/* ... kode CSS lainnya ... */
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
+  --bg-dark: #1A1A1A;
+  --bg-light: #2C2C2C; /* Bisa juga menggunakan #111111 untuk kontras yang lebih sedikit dengan dark */
+  --text-primary: #FFFFFF;
+  --text-secondary: #B0B0B0;
+  --accent-color: #00FFFF; /* Contoh: Biru Elektrik */
+  --accent-darker: #00CCFF; /* Untuk hover effect */
+  --border-color: #444444;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-dark);
+  color: var(--text-primary);
+  line-height: 1.6;
+  scroll-behavior: smooth;
+}
+
+button {
+  padding: 20px 30px;
+  border: none;
+  background-color: rgb(200, 200, 200);
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 1.3rem;
+
+  box-shadow: 
+  -2px -2px 4px white,
+  2px 2px 4px rgb(80, 80, 80);
+}
+
+button:hover {
+  box-shadow: 
+  inset -2px -2px 4px white,
+  inset 2px 2px 4px rgb(80, 80, 80);;
+}
+
+/* Global Styles */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat', sans-serif;
+  color: var(--text-primary);
+  text-align: center;
+  margin-bottom: 2em;
+}
+
+a {
+  color: var(--accent-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--accent-darker);
+}
+
+.section-dark {
+  background-color: var(--bg-dark);
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.section-light {
+  background-color: var(--bg-light);
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.btn {
+  display: inline-block;
+  background-color: var(--accent-color);
+  color: var(--bg-dark); /* Teks tombol gelap agar kontras */
+  padding: 12px 25px;
+  border-radius: 5px;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 1px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn:hover {
+  background-color: var(--accent-darker);
+  transform: translateY(-2px);
+  color: var(--bg-dark); /* Pastikan warna teks tetap gelap */
+}
+
+.portfolio-item {
+  position: relative; /* Untuk keperluan overlay */
+  overflow: hidden; /* Penting agar gambar tidak keluar dari box */
+  /* ... properti lain dari .portfolio-item ... */
+}
+
+.portfolio-item img {
+  display: block; /* Mencegah adanya spasi ekstra di bawah gambar */
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ini yang memastikan gambar mengisi seluruh area */
+  transition: transform 0.3s ease-in-out; /* Efek transisi saat hover (opsional) */
+}
+
+.portfolio-item:hover img {
+  transform: scale(1.05); /* Efek zoom saat hover (opsional) */
+}
+
+header nav ul {
+  list-style: none; /* Hilangkan bullet point */
+  margin: 0;
+  padding: 0;
+  display: flex; /* Untuk membuat item sejajar */
+  gap: 15px; /* Jarak antar tombol */
+}
+
+header nav ul li a {
+  display: block; /* Agar padding dan margin berfungsi penuh */
+  padding: 8px 18px; /* Padding untuk ukuran tombol */
+  background-color: var(--accent-color); /* Warna latar belakang tombol */
+  color: var(--text-primary); /* Warna teks tombol */
+  text-decoration: none; /* Hilangkan garis bawah tautan */
+  border-radius: 25px; /* Sudut membulat untuk tampilan tombol */
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease; /* Transisi halus untuk hover */
+  font-weight: 600; /* Tebalkan teks */
+  font-size: 0.95em; /* Sesuaikan ukuran font */
+  text-transform: uppercase; /* Membuat teks huruf besar */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Sedikit bayangan untuk kedalaman */
+}
+
+header nav ul li a:hover {
+  background-color: var(--bg-light); /* Warna latar belakang saat hover */
+  color: var(--accent-color); /* Warna teks saat hover */
+  transform: translateY(-2px); /* Efek sedikit terangkat saat hover */
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3); /* Bayangan lebih besar saat hover */
+}
+
+/* Jika Anda ingin tombol aktif memiliki gaya berbeda (misal, untuk halaman saat ini) */
+header nav ul li a.active {
+  background-color: var(--bg-light);
+  color: var(--accent-color);
+  border: 1px solid var(--accent-color); /* Tambahkan border */
+}
+
+
+/* Pastikan header dan nav menata item dengan baik */
+header {
+  background-color: var(--bg-dark); /* Atau warna header yang sudah ada */
+  padding: 15px 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  position: fixed; /* Jika header Anda fixed */
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logo {
+  color: var(--accent-color); /* Sesuaikan warna logo */
+  font-size: 1.8em;
+  font-weight: 700;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+nav ul li {
+  margin-left: 30px;
+}
+
+nav ul li a {
+  color: var(--text-primary);
+  font-weight: 500;
+  position: relative;
+}
+
+nav ul li a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background-color: var(--accent-color);
+  bottom: -5px;
+  left: 0;
+  transition: width 0.3s ease;
+}
+
+nav ul li a:hover::after {
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  header nav ul {
+      flex-direction: column; /* Ubah menjadi kolom di layar kecil */
+      gap: 10px;
+      margin-top: 15px; /* Jarak dari logo/toggle */
+      align-items: center; /* Tengahkan item dalam kolom */
+  }
+
+  header nav ul li a {
+      width: 100%; /* Tombol memenuhi lebar di layar kecil */
+      text-align: center;
+  }
+}
+
+/* Hero Section */
+.hero {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: url('your-hero-background.jpg') no-repeat center center/cover; /* Ganti dengan gambar latar belakang Anda */
+  position: relative;
+  overflow: hidden; /* Penting untuk overlay */
+}
+
+.hero::before { /* Overlay gelap */
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Sesuaikan tingkat kegelapan */
+}
+
+.hero-content {
+  z-index: 1; /* Agar konten di atas overlay */
+  padding: 0 20px;
+}
+
+.hero-content h1 {
+  font-size: 3.5em;
+  margin-bottom: 0.2em;
+  text-shadow: 0 0 10px rgba(0, 255, 255, 0.5); /* Efek glow halus */
+}
+
+.hero-content h2 {
+  font-size: 1.5em;
+  color: var(--text-secondary);
+  margin-top: 0;
+}
+
+/* About Section */
+.about-grid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.profile-pic img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--accent-color);
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+}
+
+.about-text {
+  width: 100%;
+  text-align: center; /* Tambahkan baris ini */
+}
+
+.about-text h3 {
+  text-align: center; /* Pastikan judul keahlian juga di tengah */
+  margin-bottom: 20px;
+  font-size: 1.8em;
+  color: var(--accent-color);
+}
+
+.skills-list {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 10px;
+}
+
+.skills-list li {
+  background-color: var(--bg-light);
+  padding: 10px 15px;
+  border-left: 3px solid var(--accent-color);
+  border-radius: 5px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  transition: background-color 0.3s ease;
+}
+
+.skills-list li:hover {
+  background-color: #383838;
+}
+
+/* Portfolio Section */
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.portfolio-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.portfolio-item:hover {
+  transform: translateY(-5px);
+}
+
+.portfolio-item img {
+  width: 100%;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.portfolio-item:hover img {
+  transform: scale(1.05);
+}
+
+.portfolio-item .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.portfolio-item:hover .overlay {
+  opacity: 1;
+}
+
+.overlay h3 {
+  color: var(--text-primary);
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.overlay p {
+  color: var(--text-secondary);
+  margin-bottom: 20px;
+}
+
+.view-project-btn {
+  background-color: var(--accent-color);
+  color: var(--bg-dark);
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.view-project-btn:hover {
+  background-color: var(--accent-darker);
+}
+
+/* Contact Section */
+.contact-form {
+  max-width: 600px;
+  margin: 0 auto 30px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+  background-color: var(--bg-light);
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  padding: 15px;
+  color: var(--text-primary);
+  font-size: 1em;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.contact-form input[type="text"]:focus,
+.contact-form input[type="email"]:focus,
+.contact-form textarea:focus {
+  border-color: var(--accent-color);
+  box-shadow: 0 0 5px rgba(0, 255, 255, 0.5);
+}
+
+.contact-form textarea {
+  resize: vertical;
+}
+
+.contact-info {
+  margin-top: 20px;
+  color: var(--text-secondary);
+}
+
+.contact-info a {
+  color: var(--accent-color);
+}
+
+/* Footer */
+footer {
+  background-color: #000000;
+  color: var(--text-secondary);
+  padding: 30px 20px;
+  text-align: center;
+  font-size: 0.9em;
+  border-top: 1px solid var(--border-color);
+}
+
+.social-links {
+  margin-top: 15px;
+}
+
+.social-links img {
+  width: 28px;
+  height: 28px;
+  margin: 0 10px;
+  transition: transform 0.3s ease;
+}
+
+.social-links img:hover {
+  transform: translateY(-3px);
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  nav {
+      flex-direction: column;
+      align-items: flex-start;
+  }
+
+  nav ul {
+      margin-top: 15px;
+      flex-direction: column;
+      width: 100%;
+      text-align: center;
+  }
+
+  nav ul li {
+      margin: 10px 0;
+  }
+
+  .hero-content h1 {
+      font-size: 2.5em;
+  }
+
+  .hero-content h2 {
+      font-size: 1.2em;
+  }
+
+  .about-grid {
+      flex-direction: column;
+  }
+
+  .portfolio-grid {
+      grid-template-columns: 1fr;
+  }
+}

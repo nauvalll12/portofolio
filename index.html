@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio Nauval - Tema Gelap</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo"><a href="#">Portofolio</a></div>
+            <ul>
+                <li><a href="#home">HOME</a></li>
+                <li><a href="#about">ABOUT</a></li>
+                <li><a href="#portfolio">PROJECT</a></li>
+                <li><a href="#contact">CONTACT</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div id="mouse-follower"></div>
+
+    <section id="home" class="hero">
+        <video autoplay muted loop id="hero-video-bg">
+            <source src="dark-abstract-bg.mp4" type="video/mp4">
+            <source src="dark-bg.webm" type="video/webm">
+        </video>
+
+        <div class="hero-content">
+            <h1>Halo, Saya M.Nauval Hibatullah Rafif</h1>
+            <h2>Hello, I'm a Front-end developer and a student at SMK Plus Pelita Nusantara, majoring in Software Engineering (Rekayasa Perangkat Lunak). I have a strong passion for coding, especially in front-end development. I enjoy bringing ideas to life through web design and development, creating user-friendly and visually appealing websites.</h2>
+            <a href="#portfolio" class="btn">See My Project</a>
+        </div>
+    </section>
+
+    <section id="about" class="section-dark">
+          <section id="about" class="section-dark">
+            <h2>ABOUT ME</h2>
+            <div class="about-grid">
+                <div class="profile-pic">
+                    <img src="image/profile.jpg" alt="Foto Profil Anda">
+                </div>
+                <div class="about-text">
+                    <p>In addition to my technical skills, I also have experience in design, which allows me to create not only functional but also aesthetically pleasing web applications. I’m always eager to learn and take on new challenges in the world of web development, continuously improving my skills..</p>
+                    <h3>MY EXPERTISE</h3>
+        
+                    <div class="skills-grid">
+                        <div class="skill-box">
+                            <img src="image/html.png" alt="HTML">
+                            <h4>HTML</h4>
+                            <p>
+                                HTML stands for HyperText Markup Language, and is the standard markup language used to create and structure web pages.</p>
+                        </div>
+                        <div class="skill-box">
+                            <img src="image/css.png" alt="CSS">
+                            <h4>CSS</h4>
+                            <p>CSS stands for Cascading Style Sheets, and is a language used to define the appearance and design of web pages created with HTML.</p>
+                        </div>
+                        <div class="skill-box">
+                            <img src="image/javascript.png" alt="JAVASCRIPT">
+                            <h4>JAVA SCRIPT</h4>
+                            <p>JavaScript is a programming language used to make web pages more interactive and dynamic.</p>
+                        </div>
+                        <div class="skill-box">
+                            <img src="image/php.png" alt="PHP">
+                            <h4>PHP</h4>
+                            <p>PHP stands for "Hypertext Preprocessor," a popular open source programming language for web development, especially for creating dynamic and interactive web pages.</p>
+                        </div>
+                        <div class="skill-box">
+                            <img src="image/laravel.png" alt="LARAVEL">
+                            <h4>LARAVEL(BASIC)</h4>
+                            <p>Laravel is a PHP-based framework used to simplify the development of web applications.</p>
+                        </div>
+                        <div class="skill-box">
+                            <img src="image/figma.png" alt="FIGMA">
+                            <h4>FIGMA</h4>
+                            <p>Figma is a popular cloud-based (web-based) design application used for designing, prototyping, collaborating, and diagramming.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="portfolio" class="section-light">
+          <h2>MY PROJECT</h2>
+          <div class="portfolio-grid">
+              <div class="portfolio-item">
+                  <img src="images/laravel.jpg" alt="Thumbnail Aplikasi E-commerce">
+                  <div class="overlay">
+                      <h3>Project Laravel</h3>
+                      <p>Laravel Framework</p>
+                      <a href="http://127.0.0.1:8000/login" class="view-project-btn" target="_blank">Lihat Proyek</a>
+                </div>
+              </div>
+              <div class="portfolio-item">
+                <img src="images/CRUD.jpeg" alt="Thumbnail Desain Dashboard">
+                <div class="overlay">
+                    <h3>Project Crud</h3>
+                    <p>Create, Read, Update, dan Delete</p>
+                    <a href="http://localhost/crud-nauval/index.php" class="view-project-btn" target="_blank">Lihat Proyek</a>
+                </div>
+            </div>
+          </div>
+      </section>
+
+      <section id="contact" class="section-dark">
+        <h2>CONTACT ME</h2>
+        <form class="contact-form" action="send_email.php" method="POST">
+            <input type="text" name="nama" placeholder="Nama Anda" required>
+            <input type="email" name="email" placeholder="Email Anda" required>
+            <textarea name="pesan" placeholder="Pesan Anda" rows="5" required></textarea>
+            <button type="submit" class="btn">Kirim Pesan</button>
+        </form>
+        <div class="contact-info">
+            <p>Email: <a href="mailto:nauvalhibat@gmail.com">nauvalhibat@gmail.com</a></p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; CREATED BY NAUVAL 2025.</p>
+        <div class="social-links">
+            <a href="https://github.com/nauvalll12" target="_blank"><img src="icon/github.png" alt="GitHub"></a>
+            <a href="https://instagram.com/@vinstennn" target="_blank"><img src="icon/instagram.png" alt="Instagram"></a>
+            </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
